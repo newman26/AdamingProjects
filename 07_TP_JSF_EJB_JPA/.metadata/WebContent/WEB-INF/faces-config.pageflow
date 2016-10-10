@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pageflow:Pageflow xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:pageflow="http://www.sybase.com/suade/pageflow" id="pf14761384671710" configfile="/07_TP_JSF_EJB_JPA/WebContent/WEB-INF/faces-config.xml">
+  <nodes xsi:type="pageflow:PFPage" name="login.xhtml" x="122" y="178" id="pf14761385702641" referenceLink="//@navigationRule.1/@navigationCase.1/@toViewId|" outlinks="pf14761385702642 pf14761385702653" inlinks="pf14761385702653 pf14761385702654" path="/login.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="accueil.xhtml" x="338" y="370" id="pf14761385702675" referenceLink="//@navigationRule.1/@navigationCase.1/@toViewId|" inlinks="pf14761385702642 pf14761385702676" path="/accueil.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="*.xhtml" x="122" y="562" id="pf14761385702677" referenceLink="//@navigationRule.1/@fromViewId|" outlinks="pf14761385702676 pf14761385702654" path="*.xhtml"/>
+  <links id="pf14761385702642" target="pf14761385702675" source="pf14761385702641" outcome="succes"/>
+  <links id="pf14761385702676" target="pf14761385702675" source="pf14761385702677" outcome="accueil"/>
+  <links id="pf14761385702653" target="pf14761385702641" source="pf14761385702641" outcome="echec">
+    <bendPoints d1Height="-36" d2Height="-36"/>
+    <bendPoints d1Width="-64" d1Height="-36" d2Width="-64" d2Height="-36"/>
+    <bendPoints d1Width="-64" d2Width="-64"/>
+  </links>
+  <links id="pf14761385702654" target="pf14761385702641" source="pf14761385702677" outcome="login"/>
+</pageflow:Pageflow>

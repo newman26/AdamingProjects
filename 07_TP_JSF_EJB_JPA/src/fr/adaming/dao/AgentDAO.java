@@ -25,7 +25,7 @@ public class AgentDAO implements IAgentDAO{
 
 	@SuppressWarnings("unchecked")
 	@Override
-	public int isExist(String mail, String mdp) {
+	public List<Agent> isExist(String mail, String mdp) {
 		System.out.println("--------------------------je suis dans la couche dao\n");
 String req=" FROM Agent a"
                + " WHERE a.mail=:pmail";
@@ -38,11 +38,11 @@ for (Agent a:liste){
 }
 		if (liste.size()==1){
 			System.out.println("______________________________ on a trouvé un utilisateur____________________");
-			return 1;
+			return liste;
 			
 		}else{
 			System.out.println("\n______________________________ on n'a pas trouvé un utilisateur____________________");
-			return 0;
+			return null;
 		}
 	}
 	

@@ -5,6 +5,7 @@
  */
 package fr.adaming.dao;
 
+import fr.adaming.model.Agent;
 import fr.adaming.model.Utilisateur;
 import java.util.List;
 
@@ -23,5 +24,5 @@ public interface IUtilisateurDAO {
     
     public void supprimerUserDao(int id_u);
     
-   
+    public List<Utilisateur> getAllUtilisateursByIdAgent(Agent a);
 }

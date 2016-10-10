@@ -8,9 +8,12 @@ package fr.adaming.model;
 import java.io.Serializable;
 
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 /**
@@ -30,6 +33,11 @@ public class Utilisateur implements Serializable {
     private String mail;
     private String password;
 
+    @ManyToOne(fetch=FetchType.LAZY)
+    @JoinColumn(name="agent_id",referencedColumnName="id")
+    private Agent agent;
+    
+    
     /**
      * ctors
      */
@@ -95,6 +103,18 @@ public class Utilisateur implements Serializable {
     public void setPassword(String password) {
         this.password = password;
     }
+
+
+
+	public Agent getAgent() {
+		return agent;
+	}
+
+
+
+	public void setAgent(Agent agent) {
+		this.agent = agent;
+	}
 
 
 

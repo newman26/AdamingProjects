@@ -5,6 +5,7 @@
  */
 package fr.adaming.dao;
 
+import fr.adaming.model.Agent;
 import fr.adaming.model.Utilisateur;
 
 import java.util.List;
@@ -74,6 +75,18 @@ public class UtilisateurDAO implements IUtilisateurDAO {
 		
 		em.remove(u);
 	
+	}
+
+	@Override
+	public List<Utilisateur> getAllUtilisateursByIdAgent(Agent a) {
+		String req = "select * from utilisateurs c where c.agent_id=:id_a";
+
+				Query query = em.createNativeQuery(req,Utilisateur.class);
+		query.setParameter("id_a", a.getId());
+
+				List<Utilisateur> liste = query.getResultList();
+
+		return liste;
 	}
 
 

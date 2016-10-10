@@ -25,7 +25,7 @@
 
 	<p:separator />
 	<h2 style="color: red">Liste Des Utilisateurs</h2>
-	<p:dataTable var="users" value="#{agentMB.liste}">
+	<p:dataTable var="users" value="#{sessionScope.listeUsers}">
 		<p:column headerText="Id">
 			<h:outputText value="#{users.id}" />
 		</p:column>
@@ -46,7 +46,9 @@
 			<h:outputText value="#{users.password}" />
 		</p:column>
 	</p:dataTable>
-
+<h:form>
+<h:commandButton value="Accuiel" action="#{agentMB.seDeconnecter}"></h:commandButton>
+</h:form>
 
 </h:body>
 
