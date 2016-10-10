@@ -1,0 +1,53 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+	<title></title>
+</h:head>
+
+<h:body>
+	<h:form>
+		<p:breadCrumb>
+			<p:menuitem value="accueil" url="accueil.xhtml" />
+			<p:menuitem value="Nouveau Utilisater" url="ajouter.xhtml" />
+			<p:menuitem value="Modifier Utilisateur" url="modifier.xhtml" />
+			<p:menuitem value="Supprimer Utilisateur" url="supprimer.xhtml" />
+		</p:breadCrumb>
+	</h:form>
+
+	<p:spacer height="10" />
+
+	<p:separator />
+	<h2 style="color: red">Liste Des Utilisateurs</h2>
+	<p:dataTable var="users" value="#{agentMB.liste}">
+		<p:column headerText="Id">
+			<h:outputText value="#{users.id}" />
+		</p:column>
+
+		<p:column headerText="Nom">
+			<h:outputText value="#{users.nom}" />
+		</p:column>
+
+		<p:column headerText="Prenom">
+			<h:outputText value="#{users.prenom}" />
+		</p:column>
+
+		<p:column headerText="Mail">
+			<h:outputText value="#{users.mail}" />
+		</p:column>
+
+		<p:column headerText="Mot de passe">
+			<h:outputText value="#{users.password}" />
+		</p:column>
+	</p:dataTable>
+
+
+</h:body>
+
+</html>

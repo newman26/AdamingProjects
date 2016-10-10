@@ -1,0 +1,39 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+ 	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+
+    <h:head>
+        <title>Facelet Title</title>
+    </h:head>
+    <h:body>
+<h:form>
+<h:commandButton value="Accuiel" action="#{agentMB.retourAccueil}"></h:commandButton>
+</h:form>
+
+
+
+<h:form>
+    <h:panelGrid columns="2" cellpadding="5">
+        <p:outputLabel for="pNom" value="Nom: " />
+        <p:inputMask id="pNom" value="#{userMB.user.nom}" required="true"/>
+ 
+        <p:outputLabel for="pPrenom" value="Prenom:" />
+        <p:inputMask id="pPrenom" value="#{userMB.user.prenom}" required="true"/>
+ 
+        <p:outputLabel for="pMail" value="MAil: " />
+        <p:inputMask id="pMail" value="#{userMB.user.mail}" required="true"/>
+ 
+        <p:outputLabel for="pPassword" value="Password: " />
+        <p:inputMask id="pPassword" value="#{userMB.user.password}" required="true"/>
+ 
+        <p:commandButton value="Reset" type="reset" />
+        <p:commandButton value="Ajouter" update="@all" action="#{userMB.ajouterUser}"/>
+    </h:panelGrid>
+    
+    </h:form>
+    </h:body>
+</html>
